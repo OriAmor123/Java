@@ -83,7 +83,7 @@ public class Start {
         int[] arr = {1,3,5,8,12,15,25,36,45,46,48,58,60};
         int[] arr2 = {3,6,87,23,65,76,23,54,67,45,1,5,9};
         bubbleSort(arr2);
-        
+        bubbleSort(arr);
         for (int i : arr2) {
             System.out.printf(i + " ");
         }

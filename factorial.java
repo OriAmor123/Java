@@ -8,8 +8,6 @@ public class factorial {
     public static void main(String[] args) {
         int fact = 5;
         System.out.println(factNumber(fact));
-        String s = "gt";
-        String g = "tr";
 
     }
 }

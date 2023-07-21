@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Calculator",
+            "request": "launch",
+            "mainClass": "Calculator.Calculator",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Calculator.Main",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "TicTacToe.Main",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
             "name": "Question12010",
             "request": "launch",
             "mainClass": "Bagrut.Question12010",
