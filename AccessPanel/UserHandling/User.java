@@ -1,4 +1,6 @@
-package AccessPanel;
+package AccessPanel.UserHandling;
+
+import AccessPanel.Exeptions.*;
 
 public class User {
     private String userName;
@@ -10,7 +12,7 @@ public class User {
         if (passValidator(password)) {
             this.password = password;
         } else {
-            throw new RuntimeException("Password is invalid");
+            throw new InvalidPasswordExeption("Password is invalid");
         }
         /*
          * maybe i will move the validator function to the register window
@@ -21,7 +23,7 @@ public class User {
         if (emailValidator(email)) {
             this.email = email;
         } else {
-            throw new RuntimeException("Email is invalid");
+            throw new InvalidEmailExeption("Email is invalid");
         }
         this.userName = userName;
         this.birthDate = birthDate;

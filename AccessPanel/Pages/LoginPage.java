@@ -1,9 +1,10 @@
-package AccessPanel;
+package AccessPanel.Pages;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.*; 
 import javax.swing.*;
+
+import AccessPanel.UserHandling.*;
 
 public class LoginPage implements ActionListener {
 
@@ -29,7 +30,7 @@ public class LoginPage implements ActionListener {
             "abdf@h.d", 
             "gfd"));
 
-        window.setTitle("Access Panel");
+        window.setTitle("Login");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
         window.setSize(700,450);
@@ -45,7 +46,7 @@ public class LoginPage implements ActionListener {
 
         window.add(loginTitle);
 
-        userNamePanel.setBounds(100, 100, 500, 60);
+        userNamePanel.setBounds(70, 100, 500, 60);
         userNamePanel.setLayout(new BorderLayout());
         userNamePanel.setBackground(Color.RED);
         userNamePanel.setOpaque(false);
@@ -64,7 +65,7 @@ public class LoginPage implements ActionListener {
         userName.setCaretColor(Color.WHITE);
         userNamePanel.add(userName, BorderLayout.EAST);
 
-        passwordPanel.setBounds(100, 190, 500, 60);
+        passwordPanel.setBounds(70, 190, 500, 60);
         passwordPanel.setLayout(new BorderLayout());
         passwordPanel.setBackground(Color.BLUE);
         passwordPanel.setOpaque(false);

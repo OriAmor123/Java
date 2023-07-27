@@ -1,4 +1,4 @@
-package AccessPanel;
+package AccessPanel.UserHandling;
 
 import java.util.HashMap;
 import java.util.Set;
@@ -32,6 +32,24 @@ public class UserList {
 
     public static Set<String> getUserNames() {
         return userNames;
+    }
+
+    public static boolean isUsernameExist(String username) {
+        for (String user : userNames) {
+            if (user == username) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isEmailExist(String email) {
+        for (String user : userNames) {
+            if (list.get(user).getEmail() == email) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static void userValidator(User user) {
