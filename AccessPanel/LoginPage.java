@@ -5,10 +5,10 @@ import java.awt.event.*;
 import java.util.*; 
 import javax.swing.*;
 
-public class AccessPanel implements ActionListener {
+public class LoginPage implements ActionListener {
 
     JFrame window = new JFrame();
-    JLabel background;
+    JLabel loginTitle = new JLabel();
     JPanel userNamePanel = new JPanel();
     JPanel passwordPanel = new JPanel();
     JLabel userNameLabel = new JLabel();
@@ -19,10 +19,15 @@ public class AccessPanel implements ActionListener {
     JLabel feedback = new JLabel();
     JTextField userName = new JTextField();
     JPasswordField password = new JPasswordField();
-    HashMap<String, String> userList;
+    JButton register = new JButton();
 
-    public AccessPanel(HashMap<String, String> loginList) {
-        userList = loginList;
+    public LoginPage() {
+
+        UserList.addUser(new User(
+            "hey",
+            "Av1239545", 
+            "abdf@h.d", 
+            "gfd"));
 
         window.setTitle("Access Panel");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -30,7 +35,16 @@ public class AccessPanel implements ActionListener {
         window.setSize(700,450);
         window.setLayout(null);
         window.getContentPane().setBackground(new Color(0x181818));
-        
+
+        loginTitle.setBounds(30, 30, 640, 70);
+        loginTitle.setForeground(new Color(0x66ff66));
+        loginTitle.setText("Login");
+        loginTitle.setVerticalAlignment(JLabel.TOP);
+        loginTitle.setHorizontalAlignment(JLabel.CENTER);
+        loginTitle.setFont(new Font("Britannic Bold", Font.PLAIN, 50));
+
+        window.add(loginTitle);
+
         userNamePanel.setBounds(100, 100, 500, 60);
         userNamePanel.setLayout(new BorderLayout());
         userNamePanel.setBackground(Color.RED);
@@ -40,7 +54,7 @@ public class AccessPanel implements ActionListener {
         userNameLabel.setText(" User Name: ");
         userNameLabel.setVerticalAlignment(JLabel.CENTER);
         userNameLabel.setHorizontalAlignment(JLabel.LEFT);
-        userNameLabel.setForeground(new Color(0xd6d6d6));
+        userNameLabel.setForeground(new Color(0x52b4ff));
         userNamePanel.add(userNameLabel, BorderLayout.WEST);
 
         userName.setFont(new Font("Bahnschrift SemiLight", Font.ITALIC, 30));
@@ -59,7 +73,7 @@ public class AccessPanel implements ActionListener {
         passwordLabel.setText(" Password: ");
         passwordLabel.setVerticalAlignment(JLabel.CENTER);
         passwordLabel.setHorizontalAlignment(JLabel.LEFT);
-        passwordLabel.setForeground(new Color(0xd6d6d6));
+        passwordLabel.setForeground(new Color(0x52b4ff));
         passwordPanel.add(passwordLabel, BorderLayout.WEST);
 
         password.setFont(new Font("Bahnschrift SemiLight", Font.ITALIC, 30));
@@ -95,6 +109,14 @@ public class AccessPanel implements ActionListener {
         feedback.setHorizontalAlignment(JLabel.RIGHT);
         feedback.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 13));
         buttonPanel.add(feedback);
+
+        register.setBounds(340, 350, 240, 30);
+        register.setText("Don't have an accounts? register now.");
+        register.setFocusable(false);
+        register.addActionListener(this);
+        register.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 10));
+        register.setBackground(new Color(0xbbff5c));
+        window.add(register);
         
         window.add(buttonPanel);
         window.add(passwordPanel);
@@ -112,8 +134,8 @@ public class AccessPanel implements ActionListener {
             } catch (InterruptedException e1) {
                 e1.printStackTrace();
             }
-            for (String key : userList.keySet()) {
-                if (key.equals(userName.getText()) && pass.equals(userList.get(key))) {
+            for (String key : UserList.getUserNames()) {
+                if (key.equals(userName.getText()) && pass.equals(UserList.getList().get(key).getPassword())) {
                     good = true;
                     feedback.setForeground(Color.GREEN);
                     feedback.setText("Your'e successfully logged in");
@@ -129,11 +151,15 @@ public class AccessPanel implements ActionListener {
             password.setText("");
             feedback.setText("");
         }
+        if (e.getSource() == register) {
+            window.dispose();
+            new RegisterPage();
+        }
     }
 
     public static void main(String[] args) {
-        PasswordList userList = new PasswordList();
-        new AccessPanel(userList.getHashMap());
+        
+        new LoginPage();
     }
     
 }
