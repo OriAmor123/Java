@@ -12,7 +12,7 @@ public class User {
         if (passValidator(password)) {
             this.password = password;
         } else {
-            throw new InvalidPasswordExeption("Password is invalid");
+            throw new InvalidPasswordException("Password is invalid");
         }
         /*
          * maybe i will move the validator function to the register window
@@ -23,7 +23,7 @@ public class User {
         if (emailValidator(email)) {
             this.email = email;
         } else {
-            throw new InvalidEmailExeption("Email is invalid");
+            throw new InvalidEmailException("Email is invalid");
         }
         this.userName = userName;
         this.birthDate = birthDate;

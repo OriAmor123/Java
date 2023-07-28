@@ -33,7 +33,7 @@ public class LoginPage implements ActionListener {
         window.setTitle("Login");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setSize(700,450);
+        window.setSize(700,480);
         window.setLayout(null);
         window.getContentPane().setBackground(new Color(0x181818));
 
@@ -111,11 +111,11 @@ public class LoginPage implements ActionListener {
         feedback.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 13));
         buttonPanel.add(feedback);
 
-        register.setBounds(340, 350, 240, 30);
-        register.setText("Don't have an accounts? register now.");
+        register.setBounds(175, 350, 350, 60);
+        register.setText("Don't have an account? register now.");
         register.setFocusable(false);
         register.addActionListener(this);
-        register.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 10));
+        register.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 17));
         register.setBackground(new Color(0xbbff5c));
         window.add(register);
         
