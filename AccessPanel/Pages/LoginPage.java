@@ -25,15 +25,15 @@ public class LoginPage implements ActionListener {
     public LoginPage() {
 
         UserList.addUser(new User(
-            "hey",
-            "Av1239545", 
-            "abdf@h.d", 
-            "gfd"));
+                "hey",
+                "Av1239545",
+                "abdf@h.d",
+                "gfd"));
 
         window.setTitle("Login");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setSize(700,480);
+        window.setSize(700, 480);
         window.setLayout(null);
         window.getContentPane().setBackground(new Color(0x181818));
 
@@ -88,7 +88,7 @@ public class LoginPage implements ActionListener {
         buttonPanel.setLayout(null);
         buttonPanel.setBackground(Color.GREEN);
         buttonPanel.setOpaque(false);
-        
+
         login.setBounds(260, 10, 80, 40);
         login.setText("Login");
         login.addActionListener(this);
@@ -118,7 +118,7 @@ public class LoginPage implements ActionListener {
         register.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 17));
         register.setBackground(new Color(0xbbff5c));
         window.add(register);
-        
+
         window.add(buttonPanel);
         window.add(passwordPanel);
         window.add(userNamePanel);
@@ -142,7 +142,7 @@ public class LoginPage implements ActionListener {
                     feedback.setText("Your'e successfully logged in");
                 }
             }
-            if (!good){
+            if (!good) {
                 feedback.setForeground(Color.RED);
                 feedback.setText("Username or Password is incorrect.");
             }
@@ -159,8 +159,8 @@ public class LoginPage implements ActionListener {
     }
 
     public static void main(String[] args) {
-        
+
         new LoginPage();
     }
-    
+
 }

@@ -17,8 +17,10 @@ public class User {
         /*
          * maybe i will move the validator function to the register window
          * and the assignment of the password would be this.password = password;
-         * duo to the password will be valid for sure, otherwise the user won't be created.
-         * Try using try/catch block, try to create a user, if got runtime exeption display a label with the error
+         * duo to the password will be valid for sure, otherwise the user won't be
+         * created.
+         * Try using try/catch block, try to create a user, if got runtime exeption
+         * display a label with the error
          */
         if (emailValidator(email)) {
             this.email = email;
@@ -85,12 +87,15 @@ public class User {
     public String getUsername() {
         return this.userName;
     }
+
     public String getPassword() {
         return this.password;
     }
+
     public String getEmail() {
         return this.email;
     }
+
     public String getBirthDate() {
         return this.birthDate;
     }
@@ -99,25 +104,29 @@ public class User {
     public void setUsername(String altUsername) {
         this.userName = altUsername;
     }
+
     public void setPassword(String altPass) {
         if (passValidator(altPass)) {
             this.password = altPass;
         }
         throw new RuntimeException("Password is invalid");
     }
+
     public void setEmail(String altEmail) {
         if (emailValidator(altEmail)) {
             this.email = altEmail;
         }
         throw new RuntimeException("Email is invalid");
     }
+
     public void setBirthDate(String altBirthDate) {
         this.birthDate = altBirthDate;
     }
-    
+
     // * toString() overriding
     public String toString() {
-        String details = String.format("{Username: %s, Password: %s, Email: %s, Birth Date: %s}", this.userName, this.password, this.email,this.birthDate);
+        String details = String.format("{Username: %s, Password: %s, Email: %s, Birth Date: %s}", this.userName,
+                this.password, this.email, this.birthDate);
         return details;
     }
 
@@ -125,11 +134,10 @@ public class User {
     public boolean equals(Object obj) {
         if (obj instanceof User) {
             User objUser = (User) obj;
-            if (
-                this.userName == objUser.userName &&
-                this.password == objUser.password &&
-                this.email == objUser.email &&
-                this.birthDate == objUser.birthDate) {
+            if (this.userName == objUser.userName &&
+                    this.password == objUser.password &&
+                    this.email == objUser.email &&
+                    this.birthDate == objUser.birthDate) {
                 return true;
             }
         }

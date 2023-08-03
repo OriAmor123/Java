@@ -5,12 +5,13 @@ import java.util.Set;
 
 public class UserList {
 
-    private static HashMap<String ,User> list = new HashMap<>();
+    private static HashMap<String, User> list = new HashMap<>();
     private static Set<String> userNames = list.keySet();
 
     private UserList() {
-        
+
     }
+
     public static HashMap<String, User> getList() {
         return list;
     }
@@ -20,10 +21,10 @@ public class UserList {
         list.put(user.getUsername(), user);
     }
 
-    public static void editUser(User oldUser ,User newUser) {
+    public static void editUser(User oldUser, User newUser) {
         userValidator(newUser);
         list.remove(oldUser.getUsername());
-        list.put(newUser.getUsername(),newUser);
+        list.put(newUser.getUsername(), newUser);
     }
 
     public static void removeUser(User user) {
