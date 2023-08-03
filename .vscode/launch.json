@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RegisterPage",
+            "request": "launch",
+            "mainClass": "AccessPanel.Pages.RegisterPage",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "LoginPage",
+            "request": "launch",
+            "mainClass": "AccessPanel.Pages.LoginPage",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "e.Main",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "MU",
+            "request": "launch",
+            "mainClass": "e.MU",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "RegisterPage",
+            "request": "launch",
+            "mainClass": "AccessPanel.RegisterPage",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "LoginPage",
+            "request": "launch",
+            "mainClass": "AccessPanel.LoginPage",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "AccessPanel.Main",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
+            "name": "AccessPanel",
+            "request": "launch",
+            "mainClass": "AccessPanel.AccessPanel",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
             "name": "Calculator",
             "request": "launch",
             "mainClass": "Calculator.Calculator",

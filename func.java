@@ -6,11 +6,13 @@ public class func {
         strArray[index3] = tmp;
         return strArray;
     }
+
     public static void main(String[] args) {
-        String[] str = {"hey", "hello", "whatsapp"};
+        String[] str = { "hey", "hello", "whatsapp" };
         String[] ne = swap(str, 0, 1, 2);
-        for (String s: ne) {
+        for (String s : ne) {
             System.out.println(s);
+            System.out.println("hey");
         }
     }
 }

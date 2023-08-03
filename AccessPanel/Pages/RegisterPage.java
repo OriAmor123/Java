@@ -9,7 +9,7 @@ import AccessPanel.Exeptions.InvalidPasswordException;
 import AccessPanel.UserHandling.User;
 import AccessPanel.UserHandling.UserList;
 
-public class RegisterPage implements ActionListener{
+public class RegisterPage implements ActionListener {
     JFrame window = new JFrame();
     JLabel registerTitle = new JLabel();
 
@@ -30,9 +30,11 @@ public class RegisterPage implements ActionListener{
 
     JPanel birthDatePanel = new JPanel();
     JLabel birthDateLabel = new JLabel();
-    String[] monthes = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    String[] monthes = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+            "October", "November", "December" };
     JComboBox<String> monthBox = new JComboBox<>(monthes);
-    Integer[] days = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,2,21,23,24,25,26,27,28,29,30};
+    Integer[] days = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 2, 21, 23, 24, 25, 26, 27, 28,
+            29, 30 };
     JComboBox<Integer> daysBox = new JComboBox<>(days);
     Integer[] years = new Integer[40];
     JComboBox<Integer> yearsBox;
@@ -40,7 +42,6 @@ public class RegisterPage implements ActionListener{
     JLabel daysFeedback = new JLabel();
     JLabel yearsFeedback = new JLabel();
     JLabel monthsFeedback = new JLabel();
-    
 
     JPanel buttonPanel = new JPanel();
     JButton registerButton = new JButton();
@@ -53,7 +54,7 @@ public class RegisterPage implements ActionListener{
         window.setTitle("Register");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setSize(800,680);
+        window.setSize(800, 680);
         window.setLayout(null);
         window.getContentPane().setBackground(new Color(0x181818));
 
@@ -65,12 +66,11 @@ public class RegisterPage implements ActionListener{
         registerTitle.setFont(new Font("Britannic Bold", Font.PLAIN, 50));
         window.add(registerTitle);
 
-
         usernamePanel.setBounds(70, 100, 500, 60);
         usernamePanel.setLayout(new BorderLayout(0, 0));
         usernamePanel.setOpaque(false);
         usernamePanel.setBackground(Color.green);
-        
+
         usernameLabel.setText(" Username: ");
         usernameLabel.setVerticalAlignment(JLabel.CENTER);
         usernameLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -91,7 +91,6 @@ public class RegisterPage implements ActionListener{
         usernameFeedback.setHorizontalAlignment(JLabel.LEFT);
         usernameFeedback.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 20));
         window.add(usernameFeedback);
-
 
         passwordPanel.setBounds(70, 190, 500, 60);
         passwordPanel.setLayout(new BorderLayout(0, 0));
@@ -119,7 +118,6 @@ public class RegisterPage implements ActionListener{
         passwordFeedback.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 20));
         window.add(passwordFeedback);
 
-
         emailPanel.setBounds(70, 280, 500, 60);
         emailPanel.setLayout(new BorderLayout(0, 0));
         emailPanel.setOpaque(false);
@@ -146,13 +144,12 @@ public class RegisterPage implements ActionListener{
         emailFeedback.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 20));
         window.add(emailFeedback);
 
-
         birthDatePanel.setBounds(70, 370, 500, 60);
         birthDatePanel.setLayout(null);
         birthDatePanel.setOpaque(false);
         birthDatePanel.setBackground(Color.YELLOW);
 
-        birthDateLabel.setBounds(0,0, 500, 60);
+        birthDateLabel.setBounds(0, 0, 500, 60);
         birthDateLabel.setText(" Birth Date:");
         birthDateLabel.setVerticalAlignment(JLabel.CENTER);
         birthDateLabel.setHorizontalAlignment(JLabel.LEFT);
@@ -160,14 +157,14 @@ public class RegisterPage implements ActionListener{
         birthDateLabel.setForeground(new Color(0x52b4ff));
         birthDatePanel.add(birthDateLabel);
 
-        slashes.setBounds(0,0, 500, 60);
+        slashes.setBounds(0, 0, 500, 60);
         slashes.setText("/               /             ");
         slashes.setVerticalAlignment(JLabel.CENTER);
         slashes.setHorizontalAlignment(JLabel.RIGHT);
         slashes.setFont(new Font("Bahnschrift SemiBold", Font.PLAIN, 30));
         slashes.setForeground(Color.WHITE);
         birthDatePanel.add(slashes);
- 
+
         for (int i = 0, j = 2023; i < years.length; i++, j--) {
             years[i] = j;
         }
@@ -184,7 +181,6 @@ public class RegisterPage implements ActionListener{
         daysBox.setFont(new Font("Bahnschrift SemiBold", Font.PLAIN, 20));
         birthDatePanel.add(daysBox);
 
-
         buttonPanel.setBounds(100, 460, 500, 60);
         buttonPanel.setLayout(null);
         buttonPanel.setOpaque(false);
@@ -198,19 +194,18 @@ public class RegisterPage implements ActionListener{
         registerButton.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 15));
         buttonPanel.add(registerButton);
 
-        registerLabel.setBounds(0,0,360,60);
+        registerLabel.setBounds(0, 0, 360, 60);
         registerLabel.setVerticalAlignment(JLabel.CENTER);
         registerLabel.setHorizontalAlignment(JLabel.RIGHT);
         registerLabel.setFont(new Font("Bahnschrift Condensed", Font.BOLD, 20));
         buttonPanel.add(registerLabel);
-
 
         loginPanel.setBounds(100, 550, 500, 60);
         loginPanel.setLayout(null);
         loginPanel.setOpaque(false);
         loginPanel.setBackground(Color.CYAN);
 
-        loginButton.setBounds(75, 0, 350 ,60);
+        loginButton.setBounds(75, 0, 350, 60);
         loginButton.setFocusable(false);
         loginButton.addActionListener(this);
         loginButton.setBackground(new Color(0xbbff5c));
@@ -219,7 +214,6 @@ public class RegisterPage implements ActionListener{
         loginButton.setVerticalAlignment(JButton.CENTER);
         loginButton.setHorizontalAlignment(JButton.CENTER);
         loginPanel.add(loginButton);
-
 
         window.add(loginPanel);
         window.add(buttonPanel);
@@ -238,7 +232,7 @@ public class RegisterPage implements ActionListener{
             } else {
                 usernameFeedback.setText("");
             }
-            String password = new String(passwordField.getPassword());    
+            String password = new String(passwordField.getPassword());
             if (password.equals("")) {
                 passwordFeedback.setText("*Required");
             } else {
@@ -249,7 +243,8 @@ public class RegisterPage implements ActionListener{
             } else {
                 emailFeedback.setText("");
             }
-            String birthDate = daysBox.getSelectedItem() + "/" + monthBox.getSelectedItem() + "/" + yearsBox.getSelectedItem();
+            String birthDate = daysBox.getSelectedItem() + "/" + monthBox.getSelectedItem() + "/"
+                    + yearsBox.getSelectedItem();
             User user;
             try {
                 user = new User(usernameField.getText(), password, emailField.getText(), birthDate);
@@ -259,13 +254,14 @@ public class RegisterPage implements ActionListener{
             } catch (InvalidPasswordException e1) {
                 passwordFeedback.setText("Password is invalid");
             }
-            
+
         }
         if (e.getSource() == loginButton) {
             window.dispose();
             new LoginPage();
         }
     }
+
     public static void main(String[] args) {
         new RegisterPage();
     }
