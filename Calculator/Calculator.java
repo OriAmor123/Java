@@ -22,8 +22,8 @@ public class Calculator implements ActionListener {
         window.setTitle("Calculator");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setSize(400,650);
-        window.setLayout(new BorderLayout(0,0));
+        window.setSize(400, 650);
+        window.setLayout(new BorderLayout(0, 0));
 
         calcPanel.setLayout(new BorderLayout());
         calcPanel.setPreferredSize(new Dimension(400, 150));
@@ -89,7 +89,7 @@ public class Calculator implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        for (int i = 0; i < 3; i ++) {
+        for (int i = 0; i < 3; i++) {
             if (e.getSource() == buttons[i]) {
                 if (calculations.getText() == "0" || calculations.getText() == operator) {
                     calculations.setText(String.valueOf(buttons[i].getText()));
@@ -98,7 +98,7 @@ public class Calculator implements ActionListener {
                 }
             }
         }
-        for (int i = 4; i < 7; i ++) {
+        for (int i = 4; i < 7; i++) {
             if (e.getSource() == buttons[i]) {
                 if (calculations.getText() == "0" || calculations.getText() == operator) {
                     calculations.setText(String.valueOf(buttons[i].getText()));
@@ -107,7 +107,7 @@ public class Calculator implements ActionListener {
                 }
             }
         }
-        for (int i = 8; i < 11; i ++) {
+        for (int i = 8; i < 11; i++) {
             if (e.getSource() == buttons[i]) {
                 if (calculations.getText() == "0" || calculations.getText() == operator) {
                     calculations.setText(String.valueOf(buttons[i].getText()));
@@ -124,29 +124,29 @@ public class Calculator implements ActionListener {
             }
         }
         // for "."
-        if (e.getSource() == buttons[13]) { 
+        if (e.getSource() == buttons[13]) {
             calculations.setText(calculations.getText().concat("."));
         }
         // for '+'
-        if (e.getSource() == buttons[3]) { 
+        if (e.getSource() == buttons[3]) {
             operator = "+";
             num1 = Double.parseDouble(calculations.getText());
             calculations.setText("+");
         }
         // for '-'
-        if (e.getSource() == buttons[7]) { 
+        if (e.getSource() == buttons[7]) {
             operator = "-";
             num1 = Double.parseDouble(calculations.getText());
             calculations.setText("-");
         }
         // for 'X'
-        if (e.getSource() == buttons[11]) { 
+        if (e.getSource() == buttons[11]) {
             operator = "X";
             num1 = Double.parseDouble(calculations.getText());
             calculations.setText("X");
         }
         // for '/'
-        if (e.getSource() == buttons[15]) { 
+        if (e.getSource() == buttons[15]) {
             operator = "/";
             num1 = Double.parseDouble(calculations.getText());
             calculations.setText("/");

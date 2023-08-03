@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Pong",
+            "request": "launch",
+            "mainClass": "Pong.Pong",
+            "projectName": "Java_e76c77ce"
+        },
+        {
+            "type": "java",
             "name": "RegisterPage",
             "request": "launch",
             "mainClass": "AccessPanel.Pages.RegisterPage",
